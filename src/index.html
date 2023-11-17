@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+</head>
+<style>
+  body {
+    overflow-x: hidden;
+  }
+  .scroll {
+    height: 110vh;
+    width: 100%;
+  }
+  #metax_ad {
+    width: 160px;
+    height: 90px;
+  }
+  #metax_ad_1 {
+    width: 320px;
+    height: 180px;
+  }
+</style>
+<body>
+  <div class="scroll"></div>
+  <div id="metax_ad">
+    <script>
+      window.metaxtag = window.metaxtag || {cmd:[]};
+      metaxtag.debug = true;
+      metaxtag.cmd.push({
+        slotElementId:'metax_ad',
+        collapseEmptyDiv:true,
+        requestParams:{
+          adunitId:'213',
+          pubId:123,
+          inv:'app',
+          appName:"OpenBrowser",
+          appBundle:"com.seraphic.openinet.pre",
+          appStoreUrl:"https://play.google.com/store/apps/details?id=com.seraphic.openinet.pre",
+          appVersion:"2.2.1.1022",
+        },
+        isAdvanceRender: true,
+        onAdResponseEmpty: function(e) {
+          console.log('Html Ad response empty',e)
+        },
+        onAdResponseFull: function() {
+          console.log('Html Ad response full');
+        }
+      })
+      
+      setTimeout(function(){
+        metaxtag.cmd.push({
+          slotElementId:'metax_ad_1',
+          collapseEmptyDiv:true,
+          requestParams:{
+            adunitId:'213',
+            pubId:123
+          },
+          onAdResponseEmpty: function(e) {
+            console.log('Html Ad response empty',e)
+          }
+        })
+      },2000)
+
+      setTimeout(function(){
+        var dom = document.createElement('div');
+        dom.id = 'metax_ad_1';
+        document.body.appendChild(dom);
+      },5000)
+    </script>
+  </div>
+</body>
+</html>
