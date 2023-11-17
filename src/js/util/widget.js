@@ -115,7 +115,7 @@ widget.prototype.adRequest = function() {
     MX_APP_DOMAIN: encodeURIComponent(window.location.href),
     MX_USER_AGENT: encodeURIComponent(navigator.userAgent),
   };
-  var url = 'https://rtbus.metaxads.com/ads/html?pubid=MX_PUBID&adunit=MX_ADUNITID&lang=MX_DEVICE_LANGUAGE&w=MX_WIDTH&h=MX_HEIGHT&secure=MX_SECURE&url=MX_URL&referer=MX_REFERER&cb=MX_CACHEBUSTER&channel=MX_CHANNEL';
+  var url = 'https://rtbus.m.com/ads/html?pubid=MX_PUBID&adunit=MX_ADUNITID&lang=MX_DEVICE_LANGUAGE&w=MX_WIDTH&h=MX_HEIGHT&secure=MX_SECURE&url=MX_URL&referer=MX_REFERER&cb=MX_CACHEBUSTER&channel=MX_CHANNEL';
   if(_obj.MX_INV == "app"){
     url += "&inv=MX_INV&appname=MX_APP_NAME&appid=MX_APP_ID&bundle=MX_APP_BUNDLE&storeurl=MX_APP_STORE_URL&appver=MX_APP_VERSION&appdomain=MX_APP_DOMAIN&ua=MX_USER_AGENT";
   }
