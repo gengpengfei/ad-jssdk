@@ -8,8 +8,15 @@ var iframeMessage = {
     // 监听来自iframe的消息
     window.addEventListener('message', function(event) {
       if (event.data && typeof event.data == "string") {
-        debug.log('广告返回正常展示事件',event.data);
-        that._map[event.data] = true;
+        var iframeName;
+        try {
+          var data = JSON.parse(event.data);
+          iframeName = data.name || event.data;
+        } catch (error) {
+          iframeName = event.data;
+        }
+        debug.log('广告返回正常展示事件'+iframeName);
+        that._map[iframeName] = true;
       }
     })
   },
